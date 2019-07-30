@@ -1,0 +1,93 @@
+﻿@page
+@model RRHH.Pages.Jobs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align:center;color:darkcyan">Available Jobs</h1>
+@if (User.Identity.IsAuthenticated)
+{
+    @if (Model.CurrentUser.accountType == "employer")
+    {
+        <p style="color:white">
+            <a asp-page="Create">Create New</a>
+        </p>
+    }
+}
+
+<form>
+    <input type="text" asp-for="jobSearch" />
+    <input type="submit" value="search" />
+</form>
+
+<br />
+<table style="color:white; font-weight:lighter; font-size:15px; height:25px " class="table;">
+    <thead style="font-size:20px; background-color:darkcyan; text-align:center;">
+        <tr>
+            <th style="color:white; height:25px">
+                @Html.DisplayNameFor(model => model.jobPosting[0].company)
+            </th>
+            <th style="color:white; text-align:center;">
+                @Html.DisplayNameFor(model => model.jobPosting[0].companyCulture)
+            </th>
+            <th style="color:white;text-align:center;">
+                @Html.DisplayNameFor(model => model.jobPosting[0].jobTitle)
+            </th>
+            <th style="color:white;text-align:center;">
+                @Html.DisplayNameFor(model => model.jobPosting[0].jobDescription)
+            </th>
+            <th style="color:white;text-align:center;">
+                @Html.DisplayNameFor(model => model.jobPosting[0].workHours)
+            </th>
+            <th style="color:white;text-align:center;">
+                @Html.DisplayNameFor(model => model.jobPosting[0].salaryRange)
+            </th>
+            <th style="color:white;text-align:center;">
+                @Html.DisplayNameFor(model => model.jobPosting[0].benefits)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.jobPosting)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.company)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.companyCulture)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.jobTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.jobDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.workHours)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.salaryRange)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.benefits)
+                </td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @if (Model.CurrentUser.accountType == "employer")
+                    {
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.jobID">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.jobID">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.jobID">Delete</a>
+                        </td>
+
+                    }
+                }
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,64 @@
+﻿@page
+@model RRHH.Pages.Jobs.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3 style="color:white">Are you sure you want to delete this?</h3>
+<div>
+    <h4>Job Posting</h4>
+    <hr />
+    <dl style="color:white; font-size:15px; font-weight:lighter"class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.company)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.companyCulture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.companyCulture)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.jobTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.jobTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.jobDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.jobDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.workHours)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.workHours)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.salaryRange)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.salaryRange)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.benefits)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.benefits)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="jobPosting.jobID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

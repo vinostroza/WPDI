@@ -1,0 +1,61 @@
+﻿@page
+@model RRHH.Pages.Jobs.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div style="color:white; font-size:15px; font-weight:lighter">
+    <h4>Job Posting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.company)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.companyCulture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.companyCulture)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.jobTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.jobTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.jobDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.jobDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.workHours)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.workHours)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.salaryRange)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.salaryRange)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPosting.benefits)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobPosting.benefits)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.jobPosting.jobID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

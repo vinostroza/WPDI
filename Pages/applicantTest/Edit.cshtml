@@ -1,0 +1,55 @@
+﻿@page
+@model RRHH.Pages.applicantTest.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>applicant1</h4>
+<hr />
+<div style="color:white" class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="applicant1.applicantID" />
+            <div class="form-group">
+                <label asp-for="applicant1.FNameOnly" class="control-label"></label>
+                <input asp-for="applicant1.FNameOnly" class="form-control" />
+                <span asp-validation-for="applicant1.FNameOnly" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="applicant1.jobInterest" class="control-label"></label>
+                <input asp-for="applicant1.jobInterest" class="form-control" />
+                <span asp-validation-for="applicant1.jobInterest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="applicant1.whyMe" class="control-label"></label>
+                <input asp-for="applicant1.whyMe" class="form-control" />
+                <span asp-validation-for="applicant1.whyMe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="applicant1.storyVideo" class="control-label"></label>
+                <input asp-for="applicant1.storyVideo" class="form-control" />
+                <span asp-validation-for="applicant1.storyVideo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="applicant1.posterID" class="control-label"></label>
+                <input asp-for="applicant1.posterID" class="form-control" />
+                <span asp-validation-for="applicant1.posterID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

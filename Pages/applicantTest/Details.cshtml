@@ -1,0 +1,55 @@
+﻿@page
+@model RRHH.Pages.applicantTest.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>applicant1</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.applicant1.FNameOnly)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.applicant1.FNameOnly)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.applicant1.jobInterest)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.applicant1.jobInterest)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.applicant1.whyMe)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.applicant1.whyMe)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.applicant1.storyVideo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.applicant1.storyVideo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.applicant1.posterID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.applicant1.posterID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.applicant1.Upload)
+        </dt>
+        <dd>
+            <iframe src="data:application/pdf;base64,@Html.DisplayFor(model => model.applicant1.Upload)"></iframe>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.applicant1.applicantID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,274 @@
+/* The animation code */
+    @keyframes animation {
+    from {
+        color: black;
+        visibility:hidden;
+    }
+
+    to {
+        color:transparent;
+        visibility: visible;
+    }
+}
+
+
+/* The element to apply the animation to */
+div h1.a {
+    color: black;
+    animation-name: animation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.1s;
+    animation-direction: normal;
+    /*animation: animation 1s linear 1s infinite alternate;*/
+    animation-fill-mode: forwards;
+}
+
+div h1.b {
+    color: black;
+    animation-name: animation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.5s;
+    animation-direction:normal;
+    /*animation: animation 3s linear 3s infinite alternate;*/
+    animation-fill-mode:forwards;
+}
+
+
+@keyframes animation1 {
+    from {
+        color: black;
+        visibility:hidden;
+        
+    }
+
+    to {
+        color: darkcyan;
+        visibility: visible;
+        
+    }
+}
+
+h1.c {
+    color: black;
+    animation-name: animation1;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+    animation-direction: normal;
+    animation-fill-mode:forwards;
+    
+}
+
+.c {
+    color: darkcyan;
+    font-size:35px; 
+    text-align:center; 
+    margin-top:5rem;
+}
+
+
+/* The element to apply the animation to */
+div img.a{
+    
+    animation-name: appear;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+    animation-direction:unset;
+    animation: animation 5s linear 5s infinite alternate;
+    transition-duration: 5s;
+}
+
+
+
+.navbar, .navbar-inverse {
+    background-color:darkslategrey !important;
+    border-color: #000 !important;
+    font-size:20px;
+    color: white;
+}
+
+
+
+.font {
+    font-family: cursive;
+}
+
+.divbreak {
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align:center;
+}
+
+.rainbow {
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
+.centered {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    border: 1px solid #DDDDDD;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.tag {
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    background-color: #92AD40;
+    padding: 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.image {
+   height:50vh; 
+   background-image:url(../images/artmke.jpg);
+   background-position:center;
+  
+}
+
+body, html{
+    height:100vh;
+}
+
+.text{
+    color:white;
+   font-weight:lighter;
+
+}
+
+.gallery img {
+    height: 270px;
+    width: 350px;
+    margin-top:5rem;
+    margin-bottom:5rem;
+    margin-left:5rem;
+    margin-right: 5rem;
+    
+}
+
+#container {
+    position: relative;
+}
+
+#img2 {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
+
+
+
+body, div {
+    font-family: 'Merienda';
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* merienda-700 - latin */
+@font-face {
+    font-family: 'Merienda';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/merienda-v7-latin-700.eot'); /* IE9 Compat Modes */
+    src: local('Merienda Bold'), local('Merienda-Bold'), url('../fonts/merienda-v7-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/merienda-v7-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/merienda-v7-latin-700.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/merienda-v7-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/merienda-v7-latin-700.svg#Merienda') format('svg'); /* Legacy iOS */
+}
+
+div h2{
+    color:lightgrey;
+    margin-left:5rem;
+}
+
+.double {
+    border-style: double;
+    border-color:white;
+    margin-left:20rem;
+    margin-right:20rem;
+    margin-top:5rem;
+    margin-bottom:5rem;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.modal{
+    max-width:none;
+    background-color:black;
+    border:double;
+    border-color:white;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.gridItem{
+    padding: 20px;
+    font-size: 16px;
+    text-align:center;
+    border: 1px solid rgba(0,0,0,0.8);
+}

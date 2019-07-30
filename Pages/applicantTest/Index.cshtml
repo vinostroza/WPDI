@@ -1,0 +1,82 @@
+﻿@page
+@model RRHH.Pages.applicantTest.IndexModel
+
+@{
+    ViewData["Title"] = "Talented Applicant";
+}
+
+<h2 style="text-align:center; color:darkcyan">Talented Applicants' Profiles</h2>
+
+@if (User.Identity.IsAuthenticated)
+{
+    @if (Model.CurrentUser.accountType == "applicant")
+    {
+        <p>
+            <a asp-page="Create">Create New</a>
+        </p>
+    }
+}
+        <table style="font-size:15px; font-weight:lighter" class="table text">
+            <thead style="font-size:20px; background-color:darkcyan">
+                <tr>
+                    <th style="text-align:center">
+                        @Html.DisplayNameFor(model => model.applicant1[0].FNameOnly)
+                    </th>
+                    <th style="text-align:center">
+                        @Html.DisplayNameFor(model => model.applicant1[0].jobInterest)
+                    </th>
+                    <th style="text-align:center">
+                        @Html.DisplayNameFor(model => model.applicant1[0].whyMe)
+                    </th>
+                    <th style="text-align:center">
+                        @Html.DisplayNameFor(model => model.applicant1[0].storyVideo)
+                    </th>
+                    <th style="text-align:center">
+                        @Html.DisplayNameFor(model => model.applicant1[0].posterID)
+                    </th>
+                    <th style="text-align:center">
+                        @Html.DisplayNameFor(model => model.applicant1[0].Upload)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.applicant1)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FNameOnly)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.jobInterest)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.whyMe)
+                    </td>
+                    <td>
+                        <iframe src="https://youtube.com/embed/@Html.DisplayFor(modelItem => item.storyVideo)"></iframe>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.posterID)
+                    </td>
+
+                    @*<td>
+                       <iframe src="data:application/pdf;base64,@Html.DisplayFor(modelItem => item.Upload)"></iframe>
+                    </td>*@
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (Model.CurrentUser.accountType == "applicant")
+                        {
+
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.applicantID">Edit</a> |
+                                <a asp-page="./Details" asp-route-id="@item.applicantID">Details</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.applicantID">Delete</a>
+                            </td>
+                        }
+
+                    }
+                </tr>
+                }
+            </tbody>
+        </table>
